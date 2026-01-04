@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
+import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../utils/constants";
 const Login = () => {
   const [emailId, setEmailId] = useState("rishab@gmail.com");
   const [password, setPassword] = useState("Rishab@123");
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleLogin = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:7777/login",
+        BASE_URL + "/login",
         {
           emailId,
           password,
         },
         { withCredentials: true }
       );
+      dispatch(addUser(res.data));
+      return navigate("/");
     } catch (err) {
       console.error(err);
     }
@@ -47,11 +53,11 @@ const Login = () => {
                 value={emailId}
                 placeholder="mail@site.com"
                 required
-                className="text-black"
+                // className="text-black"
                 onChange={(e) => setEmailId(e.target.value)}
               />
             </label>
-            <div className="validator-hint hidden text-black">
+            <div className="validator-hint hidden ">
               Enter valid email address
             </div>
           </div>
@@ -59,7 +65,7 @@ const Login = () => {
             <input
               type="password"
               value={password}
-              className="input validator text-black"
+              className="input validator"
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="Password"
@@ -67,7 +73,7 @@ const Login = () => {
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
             />
-            <p className="validator-hint hidden text-black">
+            <p className="validator-hint hidden ">
               Must be more than 8 characters, including
               <br />
               At least one number
