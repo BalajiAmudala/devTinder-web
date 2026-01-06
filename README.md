@@ -12,3 +12,4 @@
 - from frontend whenever you're making API call ,then pass the axios with configuration => {withCredentials : true }
 
 - using react-redux toolkit for state management
+- implemented secured routing,if unauthorised user(!token) , redirect him to login page
