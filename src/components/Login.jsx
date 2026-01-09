@@ -55,7 +55,7 @@ const Login = () => {
                 value={emailId}
                 placeholder="mail@site.com"
                 required
-                className="text-black"
+                className="text-sky-600"
                 onChange={(e) => setEmailId(e.target.value)}
               />
             </label>
@@ -67,7 +67,7 @@ const Login = () => {
             <input
               type="password"
               value={password}
-              className="input validator text-black"
+              className="input validator text-sky-600"
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="Password"

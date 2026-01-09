@@ -13,3 +13,4 @@
 
 - using react-redux toolkit for state management
 - implemented secured routing,if unauthorised user(!token) , redirect him to login page
+- built logout feature and invalid creds error handling dynamically
