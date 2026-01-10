@@ -14,3 +14,5 @@
 - using react-redux toolkit for state management
 - implemented secured routing,if unauthorised user(!token) , redirect him to login page
 - built logout feature and invalid creds error handling dynamically
+- get the feed and add the feed in the store
+- build the user card on feed
