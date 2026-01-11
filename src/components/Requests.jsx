@@ -1,38 +1,38 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { addConnections } from "../utils/connectionSlice";
-const Connections = () => {
-  const connections = useSelector((store) => store.connections);
+import { addRequests } from "../utils/requestSlice";
+import axios from "axios";
+
+const Requests = () => {
+  const requests = useSelector((store) => store.requests);
   const dispatch = useDispatch();
-  const fetchConnections = async () => {
+  const fetchRequests = async () => {
     try {
-      const res = await axios.get(BASE_URL + "/user/connections", {
+      const res = await axios.get(BASE_URL + "/user/requests/received", {
         withCredentials: true,
       });
-      dispatch(addConnections(res.data.data));
-      console.log("new response data bro!!!", res.data);
+      dispatch(addRequests(res.data.data));
     } catch (err) {
       console.error(err.message);
     }
   };
   useEffect(() => {
-    fetchConnections();
+    fetchRequests();
   }, []);
-  if (!connections) return;
-  if (connections.length === 0) return <h1>No Connections found!!</h1>;
+  if (!requests) return;
+  if (requests.length === 0) return <h1>No Requests found!!</h1>;
   return (
     <div className=" text-center my-10">
-      <h1 className="text-bold text-3xl">Connections</h1>
-      {connections.map((connection) => {
+      <h1 className="text-bold text-3xl">Requests</h1>
+      {requests.map((request) => {
         const { _id, firstName, lastName, photoUrl, about, gender, age } =
-          connection;
+          request.fromUserId;
 
         return (
           <div
             key={_id}
-            className="flex m-4 p-4 rounded-lg bg-base-300 w-2/3 mx-auto"
+            className="flex m-4 p-4 justify-between items-center rounded-lg bg-base-300 w-1/2 mx-auto"
           >
             <div>
               <img
@@ -48,6 +48,10 @@ const Connections = () => {
               {age && gender && <p>{age + ", " + gender}</p>}
               <p>{about}</p>
             </div>
+            <div className=" flex  mx-2">
+              <button className="btn btn-success mx-2">Success</button>
+              <button className="btn btn-secondary mx-2">Secondary</button>
+            </div>
           </div>
         );
       })}
@@ -55,4 +59,4 @@ const Connections = () => {
   );
 };
 
-export default Connections;
+export default Requests;
