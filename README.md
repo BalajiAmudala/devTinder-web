@@ -20,3 +20,4 @@
 - show toast message on save profile
 - New page - see all my connections
 - New page - see all my connections Requests
+- Feature - Accept/Reject connection request
