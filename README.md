@@ -16,3 +16,6 @@
 - built logout feature and invalid creds error handling dynamically
 - get the feed and add the feed in the store
 - build the user card on feed
+- Edit profile feature
+- show toast message on save profile
+- see all my connections
