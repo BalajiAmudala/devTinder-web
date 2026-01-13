@@ -45,7 +45,7 @@ const EditProfile = ({ user }) => {
                 <input
                   type="text"
                   value={firstName}
-                  className="input"
+                  className="input  text-sky-600"
                   placeholder="FirstName"
                   onChange={(e) => setFirstName(e.target.value)}
                 />
@@ -57,7 +57,7 @@ const EditProfile = ({ user }) => {
                 <input
                   type="text"
                   value={lastName}
-                  className="input"
+                  className="input  text-sky-600"
                   placeholder="LastName"
                   onChange={(e) => setLastName(e.target.value)}
                 />
@@ -69,7 +69,7 @@ const EditProfile = ({ user }) => {
                 <input
                   type="number"
                   value={age}
-                  className="input"
+                  className="input  text-sky-600"
                   placeholder="Age"
                   onChange={(e) => setAge(e.target.value)}
                 />
@@ -81,7 +81,7 @@ const EditProfile = ({ user }) => {
                 <input
                   type="text"
                   value={photoUrl}
-                  className="input"
+                  className="input  text-sky-600"
                   placeholder="PhotoUrl"
                   onChange={(e) => setPhotoUrl(e.target.value)}
                 />
@@ -99,7 +99,7 @@ const EditProfile = ({ user }) => {
               </fieldset> */}
               <legend className="fieldset-legend">About:</legend>
               <textarea
-                className="textarea"
+                className="textarea  text-sky-600"
                 placeholder="Bio"
                 value={about}
                 onChange={(e) => setAbout(e.target.value)}
@@ -111,7 +111,7 @@ const EditProfile = ({ user }) => {
                 <input
                   type="text"
                   value={gender}
-                  className="input"
+                  className="input  text-sky-600"
                   placeholder="Gender"
                   onChange={(e) => setGender(e.target.value)}
                 />
