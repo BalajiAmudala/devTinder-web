@@ -1,3 +1,54 @@
+
+# 📘 README for *Frontend Repo*
+## *DevTinder Web*
+
+⁠ md
+# DevTinder Web – React Frontend Application
+
+DevTinder Web is a **React-based frontend application** built to demonstrate modern UI development and integration with backend APIs.
+
+The project focuses on reusable component design, responsive layouts, and consuming backend services to build data-driven user interfaces.
+
+---
+
+## 🚀 Tech Stack
+- **React.js**
+- **JavaScript (ES6+)**
+- **HTML5**
+- **CSS3**
+- **Axios / Fetch API**
+- **Responsive Design**
+
+---
+
+## 📌 Features
+- Reusable and modular React components
+- Responsive UI for different screen sizes
+- API integration with backend services
+- Asynchronous data fetching and state updates
+- Error handling for API responses
+- Clean and maintainable component structure
+
+---
+
+## 🔗 Backend Integration
+This frontend application is integrated with a Node.js backend:  
+👉 **NamasteNode** – https://github.com/BalajiAmudala/NamasteNode
+
+The backend provides REST APIs for data operations used by this React app.
+
+---
+
+## 🛠️ How to Run Locally
+
+1. Clone the repository
+ ⁠bash
+git clone https://github.com/BalajiAmudala/devTinder-web.git
+cd devTinder-web
+
+
+Development steps : 
+
 # Devtinder
 
 - used Vite bundler
@@ -23,4 +74,6 @@
 - Feature - Accept/Reject connection request
 - send/Ignore the user card from the feed
 - signUp Newuser
-- E2E Testing
+- E2E Testing.
+
+  Thanks!
